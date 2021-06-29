@@ -472,6 +472,12 @@ const routes: Routes = [
 export class AppRoutingModule {}
 ```
 
+```
+Cconstructor(private router:Router; private route: ActivatedRoute) {}
+```
+
+
+
 ### 子路由
 
 在路由模板下又加个`<router-outlet></router-outlet>`
@@ -500,7 +506,7 @@ export class AppRoutingModule {}
 - 读取
 
   - ```
-    this.route.paramsMap.subscribe(params => {...})
+    this.route.paramMap.subscribe(params => {...})
     ```
 
 #### 路径对象参数
@@ -526,7 +532,7 @@ export class AppRoutingModule {}
 - 读取
 
   - ```
-    this.route.paramsMap.subscribe(params => {...})
+    this.route.paramMap.subscribe(params => {...})
     ```
 
 #### 查询参数
@@ -540,7 +546,7 @@ export class AppRoutingModule {}
 - 激活
 
   - ```
-    <a [routerLink]="[/home]" [queryParams]={}name:'val1'>...</a>
+    <a [routerLink]="[/home]" [queryParams]={name:'val1'}>...</a>
     
     this.router.navigate(['home'], {queryParams:{name: 'val1'}});
     ```
@@ -554,7 +560,7 @@ export class AppRoutingModule {}
 - 读取
 
   - ```
-    this.route.queryParamsMap.subscribe(params => {...});
+    this.route.queryParamMap.subscribe(params => {...});
     ```
 
 
